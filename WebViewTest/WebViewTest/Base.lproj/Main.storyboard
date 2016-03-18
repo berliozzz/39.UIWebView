@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UHw-eu-Q6E">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ats-to-qq8"/>
+                                </connections>
+                            </webView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="9pc-Wy-gqf">
+                                <rect key="frame" x="282" y="282" width="37" height="37"/>
+                                <color key="color" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cuX-9f-QuC">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="rewind" id="vTq-HI-aCt">
+                                        <connections>
+                                            <action selector="actionBack:" destination="BYZ-38-t0r" id="iz3-EU-f3o"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="44" style="plain" systemItem="fixedSpace" id="kFf-hn-2Dx"/>
+                                    <barButtonItem systemItem="fastForward" id="VUj-Ix-Jvj">
+                                        <connections>
+                                            <action selector="actionForward:" destination="BYZ-38-t0r" id="uhI-LB-TlD"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="oyS-X3-feh"/>
+                                    <barButtonItem systemItem="refresh" id="fuN-iy-EFp">
+                                        <connections>
+                                            <action selector="actionRefresh:" destination="BYZ-38-t0r" id="1QC-pF-Zq5"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="cuX-9f-QuC" secondAttribute="trailing" id="Ef0-C1-zS0"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="UHw-eu-Q6E" secondAttribute="bottom" id="Fpw-YN-QYH"/>
+                            <constraint firstAttribute="trailing" secondItem="UHw-eu-Q6E" secondAttribute="trailing" id="HLA-Fo-hPd"/>
+                            <constraint firstItem="cuX-9f-QuC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Kna-74-TrD"/>
+                            <constraint firstItem="9pc-Wy-gqf" firstAttribute="centerY" secondItem="UHw-eu-Q6E" secondAttribute="centerY" id="Lz6-yK-FZD"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="cuX-9f-QuC" secondAttribute="bottom" id="MBh-tH-WcQ"/>
+                            <constraint firstItem="UHw-eu-Q6E" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="bYS-mU-Nzc"/>
+                            <constraint firstItem="UHw-eu-Q6E" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="uDO-Rz-NUJ"/>
+                            <constraint firstItem="9pc-Wy-gqf" firstAttribute="centerX" secondItem="UHw-eu-Q6E" secondAttribute="centerX" id="vCZ-l6-Idh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backButtonItem" destination="vTq-HI-aCt" id="njc-5H-wlQ"/>
+                        <outlet property="forwardButtonItem" destination="VUj-Ix-Jvj" id="fYE-KB-EQg"/>
+                        <outlet property="indicator" destination="9pc-Wy-gqf" id="nAA-50-vrf"/>
+                        <outlet property="webView" destination="UHw-eu-Q6E" id="3BG-F1-fe3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="565" y="439"/>
+        </scene>
+    </scenes>
+</document>
